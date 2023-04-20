@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+*,*::before,*::after
+{
+  box-sizing: border-box;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body{
+ background:linear-gradient(to right,#8ebec4,#dfeced) ;
+ margin: 0;
+}
+.calculator-grid{
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem , auto) repeat(5, 6rem);
+  
+ 
+}
+@media only screen and (max-width: 600px) {
+  .calculator-grid{
+    display: grid;
+    margin-top: 2rem;
+    grid-template-columns: repeat(4, 5rem);
+    grid-template-rows: minmax(7rem , auto) repeat(5, 5rem);
+    
+   
   }
 }
+.span-two{
+  grid-column: span 2;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+.output{
+  grid-column: 1/-1;
+  background-color: rgb(44, 60, 61);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: .75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  box-shadow:rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 60%) 0px 16px 10px -10px;
+  border-radius: 7px;
 }
-
-.App-link {
-  color: #61dafb;
+.previous{
+  color:whitesmoke;
+  font-size: 1.5rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.current{
+  color: wheat;
+  font-size: 2.5rem;
+}
+.calculator-grid >button{
+  cursor: pointer;
+  font-size:2rem ;
+  border: 1px solid rgb(137, 137, 141);;
+  outline: none;
+  background-color: rgb(28, 28, 29);;
+  color: #00FFFF;
+  border-radius: 10px;
+  box-shadow:rgb(0 0 0 / 69%) 2px 26px 30px -10px, rgb(0 0 0 / 73%) 3px 16px 10px -10px;
+}
+.calculator-grid >button:hover{
+  background-color: rgb(45, 47, 49,.9);
+}
+.calculator-grid >button:focus{
+  background-color:  rgb(45, 47, 49,.9);
 }
